@@ -1,11 +1,9 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/users', (request, response) => {
-  console.log('Listagem de usuários');
+app.use(express.json());
+app.use(routes);
 
-  response.json({ message: 'Olá Mundo' });
-});
-
-app.listen(3333);
+app.listen(3333, () => console.log('Running on port 3333'));
