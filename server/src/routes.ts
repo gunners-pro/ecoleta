@@ -1,59 +1,16 @@
 import express from 'express';
-import db from './database/connection';
+
+import ItemsController from './controllers/ItemsController';
+import PointsController from './controllers/PointsController';
 
 const routes = express.Router();
 
-routes.get('/items', async (request, response) => {
-  const items = await db('items').select('*');
+const itemsController = new ItemsController();
+const pointsController = new PointsController();
 
-  const serializedItems = items.map((item) => {
-    return {
-      id: item.id,
-      title: item.title,
-      image_url: `http://localhost:3333/uploads/${item.image}`
-    };
-  });
+routes.get('/items', itemsController.index);
 
-  return response.json(serializedItems);
-});
-
-routes.post('/points', async (request, response) => {
-  const {
-    name,
-    email,
-    whatsapp,
-    latitude,
-    longitude,
-    city,
-    uf,
-    items
-  } = request.body;
-
-  const trx = await db.transaction();
-
-  const insertedIds = await trx('points').insert({
-    image: 'image-fake',
-    name,
-    email,
-    whatsapp,
-    latitude,
-    longitude,
-    city,
-    uf
-  });
-
-  const point_id = insertedIds[0];
-
-  const pointItems = items.map((item_id: number) => {
-    return {
-      item_id,
-      point_id
-    };
-  });
-
-  await trx('point_items').insert(pointItems);
-
-  return response.json({ success: true });
-});
+routes.post('/points', pointsController.create);
+routes.get('/points/:id', pointsController.show);
 
 export default routes;
