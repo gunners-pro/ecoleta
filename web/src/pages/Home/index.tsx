@@ -3,6 +3,7 @@ import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
+import imgBackground from '../../assets/home-background.svg';
 import './styles.css';
 
 const Home: React.FC = () => {
@@ -12,6 +13,8 @@ const Home: React.FC = () => {
         <header>
           <img src={logo} alt="Ecoleta" />
         </header>
+
+        <img src={imgBackground} width={250} alt="Image Ecoleta" />
 
         <main>
           <h1>Seu marketplace de coleta de resíduos.</h1>
