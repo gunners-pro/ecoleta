@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           <img src={logo} alt="Ecoleta" />
         </header>
 
-        <img src={imgBackground} width={250} alt="Image Ecoleta" />
+        <img src={imgBackground} width={250} alt="Imagem Background" />
 
         <main>
           <h1>Seu marketplace de coleta de resíduos.</h1>
