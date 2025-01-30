@@ -1,12 +1,12 @@
 :root {
-    --green: '#2FB86E';
-    --greenpeace: '#34CB79';
-    --desaturated: '#E1FAEC';
-    --title: '#322153';
-    --text: '#6C6C80';
-    --suporttext: '';
-    --block: '#FFFFFF';
-    --background: '#F0F0F5';
+    --green: #2FB86E;
+    --greenpeace: #34CB79;
+    --desaturated: #E1FAEC;
+    --title: #322153;
+    --text: #6C6C80;
+    --suporttext: #A0A0B2;
+    --block: #FFFFFF;
+    --background: #F0F0F5;
 }
 
 @font-face {
@@ -28,4 +28,17 @@
     src: url('assets/fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    height: 100vh;
+    background-image: url("../public/images/background.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
