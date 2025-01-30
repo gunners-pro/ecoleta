@@ -33,6 +33,54 @@ header div p:hover {
   text-decoration: underline;
 }
 
+main {
+  width: 736px;
+  background-color: var(--block);
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+main h1 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+main section {
+  background-color: var(--desaturated);
+  border-radius: 0.5rem;
+  height: 300px;
+  padding: 2rem;
+}
+
+main .upload div {
+  height: 100%;
+  border-style: dashed;
+  border-radius: 0.5rem;
+  border-color: var(--greenpeace);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .upload div label {
+  font-family: 'Roboto';
+  color: var(--title);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+
+main .upload div label span {
+  color: var(--greenpeace);
+}
+
+input[type="file"] {
+  display: none;
+}
+
 @media only screen and (max-width: 1366px) {
   header {
     margin: 0 4rem;
