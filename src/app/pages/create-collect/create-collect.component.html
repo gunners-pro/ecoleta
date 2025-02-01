@@ -9,15 +9,29 @@
 <main>
   <h1>Cadastro do<br />ponto de coleta</h1>
 
+  @if (imageUrl) {
+  <div class="imgPicked">
+    <img [src]="imageUrl" alt="Imagem do estabelecimento" />
+    <label for="change_img">
+      <span class="material-icons">file_upload</span>
+      <input type="file" id="change_img" (change)="onChangeFile($event)" />
+      Escolher outra imagem
+    </label>
+  </div>
+  }
+
+  @else {
   <section class="upload">
-    <div>
+    <div class="imgUnpicked">
       <label for="file_upload">
         <span class="material-icons">file_upload</span>
-        <input type="file" name="image" id="file_upload" />
+        <input type="file" name="image" id="file_upload" (change)="onChangeFile($event)" />
         Imagem do estabelecimento
       </label>
     </div>
   </section>
+  }
+
 </main>
 
 <router-outlet />

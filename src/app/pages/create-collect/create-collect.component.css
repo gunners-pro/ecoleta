@@ -46,24 +46,46 @@ main h1 {
   margin-bottom: 2rem;
 }
 
-main section {
+main .imgPicked img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+main .imgPicked label {
+  display: flex;
+  align-items: center;
+  margin-top: .5rem;
+  font-family: 'Roboto';
+  color: var(--title);
+  cursor: pointer;
+}
+
+main .imgPicked label span {
+  color: var(--greenpeace);
+}
+
+main .upload {
   background-color: var(--desaturated);
   border-radius: 0.5rem;
   height: 300px;
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-main .upload div {
-  height: 100%;
+main .upload .imgUnpicked {
+  width: 100%;
   border-style: dashed;
   border-radius: 0.5rem;
   border-color: var(--greenpeace);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2rem;
 }
 
-main .upload div label {
+main .upload .imgUnpicked label {
   font-family: 'Roboto';
   color: var(--title);
   display: flex;
@@ -73,7 +95,7 @@ main .upload div label {
   cursor: pointer;
 }
 
-main .upload div label span {
+main .upload .imgUnpicked label span {
   color: var(--greenpeace);
 }
 
